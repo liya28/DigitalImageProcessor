@@ -444,5 +444,22 @@ namespace DigitalImageProcessor
             pictureBox3.Image?.Dispose();
             pictureBox3.Image = result;
         }
+
+        private void convolutionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            ConvolutionForm convForm = Application.OpenForms.OfType<ConvolutionForm>().FirstOrDefault();
+
+            if (convForm == null)
+            {
+                convForm = new ConvolutionForm();
+                convForm.Show();
+            } else
+            {
+                convForm.Show();
+                convForm.BringToFront();
+            }
         }
+    }
     }
